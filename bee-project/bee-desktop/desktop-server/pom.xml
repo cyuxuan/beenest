@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>club.beenest.desktop</groupId>
+    <artifactId>desktop-server</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>desktop-server-api</module>
+        <module>desktop-server-service</module>
+        <module>desktop-server-manager</module>
+        <module>desktop-server-dao</module>
+        <module>desktop-server-object</module>
+        <module>desktop-server-boot</module>
+        <module>desktop-server-plugin</module>
+        <module>desktop-server-common</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <!--  项目基本依赖-各个模块都需要  -->
+    <dependencies>
+        <!--    基础包，各个模块都用到，放到顶层结构中    -->
+        <dependency>
+            <groupId>club.beenest.desktop</groupId>
+            <artifactId>desktop-server-object</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>club.beenest.desktop</groupId>
+            <artifactId>desktop-server-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <!--  依赖版本管理  -->
+    <dependencyManagement>
+    </dependencyManagement>
+</project>
