@@ -1,10 +1,21 @@
-<script setup>
-import BeeSearch from "./views/BeeSearch.vue";
+<script setup lang="ts">
+import BeeSearch from "./components/layout/BeeSearch.vue";
+import BeeHeader from "./components/layout/BeeHeader.vue";
+import BeeFooter from "./components/layout/BeeFooter.vue";
 </script>
 
 <template>
-  <!-- 引入搜索主页 -->
-  <BeeSearch />
+  <header class="color:red">
+    <!-- 顶部 -->
+    <BeeHeader />
+  </header>
+  <body>
+    <!-- 引入搜索主页 -->
+    <BeeSearch />
+  </body>
+  <footer>
+    <BeeFooter />
+  </footer>
 </template>
 
 <style scoped>
