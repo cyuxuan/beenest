@@ -8,7 +8,6 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * @author 陈玉轩
  * @since 2022-08-20
  */
-
 @SpringBootApplication
 @EnableEurekaServer
 public class BeeEurekaApplication {

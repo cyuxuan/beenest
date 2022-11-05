@@ -1,4 +1,4 @@
-package club.beenest.search.controller.beeseaarch;
+package club.beenest.search.controller;
 
 import club.beenest.search.BeeSearchService;
 import org.springframework.web.bind.annotation.PostMapping;

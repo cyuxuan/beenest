@@ -1,0 +1,135 @@
+#数据源
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://rm-bp1n05ghy5p5fj8s29o.mysql.rds.aliyuncs.com:3306/bee-search?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+      username: root
+      password: root
+
+
+
+
+#spring:
+#  datasource:
+##    driver-class-name: com.mysql.cj.jdbc.Driver
+##    url: jdbc:mysql://rm-bp1n05ghy5p5fj8s29o.mysql.rds.aliyuncs.com:3306/bee-search?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+##    username: bee
+##    password: beenes@666#
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    durid:
+#      #DruidDataSource 所需参数
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://rm-bp1n05ghy5p5fj8s29o.mysql.rds.aliyuncs.com:3306/bee-search?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+#      username: bee
+#      password: beenes@666#
+#      type: com.alibaba.druid.pool.DruidDataSource
+#      initialSize: 3
+#      minIdle: 3
+#      maxActive: 30
+#      maxWait: 15000
+#      timeBetweenEvictionRunsMillis: 120000
+#      minEvictableIdleTimeMillis: 300000
+#      validationQuery: SELECT 'x'
+#      validationQueryTimeout: 1
+#      testWhileIdle: true
+#      testOnBorrow: false
+#      testOnReturn: false
+#      poolPreparedStatements: false
+#      maxPoolPreparedStatementPerConnectionSize: 20
+#      removeAbandoned: true
+#      removeAbandonedTimeoutMillis: 20000
+#      logAbandoned: true
+#      logDifferentThread: true
+#      filters: log4j,stat
+#      connectionProperties: druid.stat.mergeSql=true;druid.stat.logSlowSql=true;druid.stat.slowSqlMillis=3000
+#      useGlobalDataSourceStat: true
+#      # Druid 监控 Servlet 配置参数
+#      # StatViewServlet监控器。开启后，访问http://域名/druid/index.html
+#      stat-view-servlet:
+#        enabled: true # 开启 StatViewServlet，即开启监控功能
+#        login-username: bee # 访问监控页面时登录的账号
+#        login-password: beenest@666# # 密码
+#        url-pattern: /druid/* # Servlet的映射地址，不填写默认为"/druid/*"。如填写其它地址，访问监控页面时，要使用相应的地址
+#        reset-enable: false # 是否允许重置数据（在页面的重置按钮）。（停用后，依然会有重置按钮，但重置后不会真的重置数据）
+#        allow: 192.168.1.2,192.168.1.1 # 监控页面访问白名单。默认为127.0.0.1。与黑名单一样，支持子网掩码，如128.242.127.1/24。多个ip用英文逗号分隔
+#        deny: 18.2.1.3 # 监控页面访问黑名单
+#      # 配置 WebStatFilter（StatFilter监控器中的Web模板）
+#      web-stat-filter:
+#        enabled: true # 开启 WebStatFilter，即开启监控功能中的 Web 监控功能
+#        url-pattern: /* # 映射地址，即统计指定地址的web请求
+#        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*' # 不统计的web请求，如下是不统计静态资源及druid监控页面本身的请求
+#        session-stat-enable: true # 是否启用session统计
+#        session-stat-max-count: 1 # session统计的最大个数，默认是1000。当统计超过这个数，只统计最新的
+#        principal-session-name: userName # 所存用户信息的serssion参数名。Druid会依照此参数名读取相应session对应的用户名记录下来（在监控页面可看到）。如果指定参数不是基础数据类型，将会自动调用相应参数对象的toString方法来取值
+#        principal-cookie-name: userName # 与上类似，但这是通过Cookie名取到用户信息
+#        profile-enable: true # 监控单个url调用的sql列表（试了没生效，以后需要用再研究）
+#      filter:
+#        wall:
+#          enabled: true  # 开启SQL防火墙功能
+#          config:
+#            select-allow: true # 允许执行Select查询操作
+#            delete-allow: false # 不允许执行delete操作
+#            create-table-allow: false # 不允许创建表
+#datasource:
+#  type: com.alibaba.druid.pool.DruidDataSource
+#  druid:
+#    username: bee
+#    password: beenest@666#
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://rm-bp1n05ghy5p5fj8s29o.mysql.rds.aliyuncs.com:3306/bee-search?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+#    max-total: 5000
+#    # 连接池配置：大小，最小，最大
+#    initial-size: 5
+#    min-idle: 5
+#    max-active: 20
+#    # 连接等待超时时间
+#    max-wait: 30000
+#    # 配置检测可以关闭的空闲连接，间隔时间
+#    time-between-eviction-runs-millis: 60000
+#    # 配置连接在池中的最小生存时间
+#    min-evictable-idle-time-millis: 300000
+#    # 检测连接是否有，有效得select语句
+#    validation-query: select '1' from dual
+#    # 申请连接的时候检测，如果空闲时间大于time-between-eviction-runs-millis，执行validationQuery检测连接是否有效，建议配置为true，不影响性能，并且保证安全性。
+#    test-while-idle: true
+#    # 申请连接时执行validationQuery检测连接是否有效，建议设置为false，不然会会降低性能
+#    test-on-borrow: false
+#    # 归还连接时执行validationQuery检测连接是否有效，建议设置为false，不然会会降低性能
+#    test-on-return: false
+#    # 是否缓存preparedStatement，也就是PSCache  官方建议MySQL下建议关闭   个人建议如果想用SQL防火墙 建议打开
+#    # 打开PSCache，并且指定每个连接上PSCache的大小
+#    pool-prepared-statements: true
+#    max-open-prepared-statements: 20
+#    max-pool-prepared-statement-per-connection-size: 20
+#    # 配置监控统计拦截的filters, 去掉后监控界面sql无法统计, 'wall'用于防火墙防御sql注入，stat监控统计,logback日志
+#    filters: stat,wall
+#    # Spring监控AOP切入点，如x.y.z.service.*,配置多个英文逗号分隔
+#    #aop-patterns: com.springboot.servie.*
+#    # lowSqlMillis用来配置SQL慢的标准，执行时间超过slowSqlMillis的就是慢
+#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+#    # WebStatFilter监控配置
+#    web-stat-filter:
+#      enabled: true
+#      # 添加过滤规则：那些访问拦截统计
+#      url-pattern: /*
+#      # 忽略过滤的格式：哪些不拦截，不统计
+#      exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+#    # StatViewServlet配置（Druid监控后台的Servlet映射配置，因为SpringBoot项目没有web.xml所在在这里使用配置文件设置）
+#    stat-view-servlet:
+#      enabled: true
+#      # 配置Servlet的访问路径：访问路径为/druid/**时，跳转到StatViewServlet，会自动转到Druid监控后台
+#      url-pattern: /druid/*
+#      # 是否能够重置数据
+#      reset-enable: false
+#      # 设置监控后台的访问账户及密码
+#      login-username: xsge
+#      login-password: xsge
+#      # IP白名单：允许哪些主机访问，默认为“”任何主机
+#      # allow: 127.0.0.1
+#      # IP黑名单：禁止IP访问，（共同存在时，deny优先于allow）
+#      # deny: 192.168.1.218
+#    # 配置StatFilter
+#    filter:
+#      stat:
+#        log-slow-sql: true
