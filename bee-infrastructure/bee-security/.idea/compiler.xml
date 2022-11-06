@@ -6,7 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bee-security" />
+        <module name="security-sso-boot" />
+        <module name="security-sso-manager" />
+        <module name="security-sso-api" />
+        <module name="security-sso-sdk" />
+        <module name="security-sso-service" />
+        <module name="security-sso-object" />
+        <module name="security-sso-dao" />
+        <module name="security-sso-utils" />
       </profile>
     </annotationProcessing>
   </component>

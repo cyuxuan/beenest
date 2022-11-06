@@ -1,2 +1,2 @@
 # Bee gateway
-包含各种gateway
+# spring-cloud-gateway扩展

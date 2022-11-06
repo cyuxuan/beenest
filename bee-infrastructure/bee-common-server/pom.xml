@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.4</version>
+        <groupId>club.beenest.common</groupId>
+        <artifactId>bee-common</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>pom-common.xml</relativePath>
     </parent>
 
-    <groupId>club.beenest</groupId>
     <artifactId>bee-common-server</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
